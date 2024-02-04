@@ -1,0 +1,83 @@
+{% extends "admin/base_site.html" %}
+{%load static%}
+{% block extrastyle %}
+<link rel="stylesheet" href="/static/jquery/datetimepicker/bootstrap-datetimepicker.min.css" />
+<link rel="stylesheet" hreff="/static/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href1="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="/static/bootstrap4/css/bootstrap.min.css" integrity1="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">    
+<link rel="stylesheet" href="/static/bootstrap4/css/bootstrap-theme.min.css" integrity1="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">    
+<script src="/static/jquery/jquery-2.1.1.min.js"></script>  
+<script src="/static/bootstrap4/js/bootstrap.min.js"></script>
+    
+
+    <!-- Font Awesome -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- Moment.js -->
+    <script srcc="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+ 
+   <script src="/static/jquery/datetimepicker/moment/moment.min.js"></script>
+    
+      <script src="/static/jquery/datetimepicker/bootstrap-datetimepicker.js"></script>
+    <!-- Tempus Dominus Bootstrap 4 -->
+   
+
+
+
+    
+
+  
+
+{% endblock %}
+{% block content %}
+  
+
+
+ 
+    {% if saved %}
+     Saved
+    {% endif %}
+    {% if errors %}
+     {{errors  }}
+    {% endif %}
+    {{service_name}}
+   <form method="POST"  >
+    {% csrf_token %}
+  {% for field in form%}
+  
+<div class="form-group row">
+
+<label for ="{{field.id_for_label}}"  class="col-sm-2">{{field.html_name}}</label>
+<div class="col-sm-8">
+{% if field.name == "sdate" %}
+<div class="input-group date">{{field}}</div>
+
+{% else%}
+{{field}}
+{% endif %}
+</div>
+</div>
+{% endfor%}
+    
+
+
+
+  <script type="text/javascript">
+         $(function () {
+             $('.datepicker').datetimepicker(
+                {
+'format': 'YYYY-MM-DD',
+
+                }
+
+
+
+             );
+         });
+      </script>
+
+
+  
+    <input type="submit" value="Submit" class='btn btn-submit'>
+  </form>
+{% endblock %}

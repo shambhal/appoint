@@ -1,0 +1,18 @@
+{% extends "catalog/base.html" %}
+
+{% block title%} Customer {% endblock%}
+{% block body%}
+<div class='container' style="margin-top:80px">
+    {% if error %}
+       <div class='error'>{{error}}</div>
+
+    {% endif %}
+    <h2>Create Account</h2>
+    <form method="post" novalidate> 
+        {% csrf_token %}
+        {% include "catalog/form_field.html" %}
+        <input type="submit" value="Submit" class='btn btn-primary'>
+    </form>
+</div>
+
+{% endblock body%}   
