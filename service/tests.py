@@ -2,8 +2,8 @@ from genericpath import isdir
 from django.test import TestCase
 import os
 from pathlib import Path
-from pycom.settings import MEDIA_ROOT
-from pycom.settings import MEDIA_URL
+from appoint.settings import MEDIA_ROOT
+from appoint.settings import MEDIA_URL
 
   
   

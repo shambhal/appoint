@@ -1,7 +1,7 @@
 from django.db import models
 import os.path
 import pathlib
-from pycom.settings import MEDIA_ICACHE, MEDIA_ROOT,ICACHE_URL
+from appoint.settings import MEDIA_ICACHE, MEDIA_ROOT,ICACHE_URL
 from PIL import Image
 import shutil
 # Create your models here.

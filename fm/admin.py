@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.http import JsonResponse
 from django.urls import reverse
 import re
-from pycom.settings import MEDIA_ICACHE, MEDIA_ROOT
+from appoint.settings import MEDIA_ICACHE, MEDIA_ROOT
 from .models import FaltuModel, ImageTool
 from django.http.response import HttpResponse
 from django.core.files.storage import FileSystemStorage

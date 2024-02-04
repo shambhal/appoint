@@ -4,7 +4,7 @@ from django.contrib.admin.options import ModelAdmin
 from django.contrib.admin.sites import AdminSite
 from django.http.response import HttpResponse, HttpResponseRedirect
 
-from pycom.settings import MEDIA_ROOT, MEDIA_URL, MEDIA_STATIC
+from appoint.settings import MEDIA_ROOT, MEDIA_URL, MEDIA_STATIC
 from fm.models import ImageTool,FaltuModel as fm2
 from .models import Service,SSpecial,Simg,Book
 from .forms import SServiceForm, ServiceForm,BookEditForm,RescheduleForm

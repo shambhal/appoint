@@ -1,5 +1,5 @@
 from .models import ConfigModel
-from pycom.settings import CURRENCY_SETTINGS
+from appoint.settings import CURRENCY_SETTINGS
 import babel.numbers
 '''
 class Currency:
